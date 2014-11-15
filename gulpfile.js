@@ -42,7 +42,7 @@ var AUTOPREFIXER_BROWSERS = [
 
 // Lint JavaScript
 gulp.task('jshint', function () {
-  return gulp.src('app/scripts/**/*.js')
+  return gulp.src('site/scripts/**/*.js')
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -51,7 +51,7 @@ gulp.task('jshint', function () {
 
 // Optimize Images
 gulp.task('images', function () {
-  return gulp.src('app/images/**/*')
+  return gulp.src('site/images/**/*')
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true
@@ -63,8 +63,8 @@ gulp.task('images', function () {
 // Copy All Files At The Root Level (app)
 gulp.task('copy', function () {
   return gulp.src([
-    'app/*',
-    '!app/*.html',
+    'site/*',
+    '!site/*.html',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
@@ -74,7 +74,7 @@ gulp.task('copy', function () {
 
 // Copy Web Fonts To Dist
 gulp.task('fonts', function () {
-  return gulp.src(['app/fonts/**'])
+  return gulp.src(['site/fonts/**'])
     .pipe(gulp.dest('dist/fonts'))
     .pipe($.size({title: 'fonts'}));
 });
@@ -83,9 +83,8 @@ gulp.task('fonts', function () {
 gulp.task('styles', function () {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    'app/styles/*.scss',
-    'app/styles/**/*.css',
-    'app/styles/components/components.scss'
+    'site/styles/*.scss',
+    'site/styles/**/*.css'
   ])
     .pipe($.changed('styles', {extension: '.scss'}))
     .pipe($.sass({
@@ -102,9 +101,9 @@ gulp.task('styles', function () {
 
 // Scan Your HTML For Assets & Optimize Them
 gulp.task('html', function () {
-  var assets = $.useref.assets({searchPath: '{.tmp,app}'});
+  var assets = $.useref.assets({searchPath: '{.tmp,site}'});
 
-  return gulp.src('app/**/*.html')
+  return gulp.src('site/**/*.html')
     .pipe(assets)
     // Concatenate And Minify JavaScript
     .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
@@ -113,13 +112,12 @@ gulp.task('html', function () {
     // the next line to only include styles your project uses.
     .pipe($.if('*.css', $.uncss({
       html: [
-        'app/index.html',
-        'app/styleguide.html'
+        'site/index.html'
       ],
       // CSS Selectors for UnCSS to ignore
       ignore: [
         /.navdrawer-container.open/,
-        /.app-bar.open/
+        /.nav-bar.open/
       ]
     })))
     // Concatenate And Minify Styles
@@ -128,7 +126,7 @@ gulp.task('html', function () {
     .pipe(assets.restore())
     .pipe($.useref())
     // Update Production Style Guide Paths
-    .pipe($.replace('components/components.css', 'components/main.min.css'))
+    // .pipe($.replace('components/components.css', 'components/main.min.css'))
     // Minify Any HTML
     .pipe($.if('*.html', $.minifyHtml()))
     // Output Files
@@ -149,13 +147,13 @@ gulp.task('serve', ['styles'], function () {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: ['.tmp', 'app']
+    server: ['.tmp', 'site']
   });
 
-  gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['jshint']);
-  gulp.watch(['app/images/**/*'], reload);
+  gulp.watch(['site/**/*.html'], reload);
+  gulp.watch(['site/styles/**/*.{scss,css}'], ['styles', reload]);
+  gulp.watch(['site/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['site/images/**/*'], reload);
 });
 
 // Build and serve the output from the dist build
