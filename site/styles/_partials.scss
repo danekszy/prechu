@@ -1,0 +1,15 @@
+//Global partials (mixins, functions, extensions)
+
+//Thanks WSK
+%promote-layer {
+/*
+  This may promote the layer to a composited
+  layer.
+
+  Replace with will-change when available
+
+  #perfmatters
+  */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}

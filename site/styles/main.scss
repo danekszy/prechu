@@ -1,6 +1,8 @@
 @import 'vars';
 
+//Vendor & boilerplate stuff
 @import 'vendor/normalize';
-
 @import 'h5bp';
 
+//Own styles
+@import 'global';
