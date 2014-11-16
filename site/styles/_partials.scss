@@ -14,6 +14,16 @@
   backface-visibility: hidden;
 }
 
+//Set up a container
+@mixin container() {
+  width: 100%;
+  margin: 0 auto;
+
+  @include media(desktop) {
+    width: 960px;
+  }
+}
+
 //Provide mobile-first media queries for selected size
 @mixin media($media) {
   @if $media == tablet {

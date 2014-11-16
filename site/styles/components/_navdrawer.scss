@@ -4,132 +4,132 @@ $navdrawer-drawer-color: #fefefe;
 $navdrawer-drawer-bg: $brand-color-blue;
 $navdrawer-header-color: $brand-color-blue;
 
-body.open {
-  overflow: hidden;
-}
 
 .navdrawer-container {
   @extend %promote-layer;
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 250px;
-  height: 100%;
   background-color: $navdrawer-drawer-bg;
   color: $navdrawer-drawer-color;
-  -webkit-transform: translate(-250px, 0);
-          transform: translate(-250px, 0);
+  font-size: 20px;
+  height: 100%;
   overflow-y: auto;
+  transform: translate(0, -110%);
+  width: 100%;
+  z-index: 1;
 
   @include media(desktop) {
     background-color: $navdrawer-nav-bg;
-    position: relative;
-    width: 100%;
     height: auto;
     margin-top: 0;
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-    -webkit-transition: none;
-            transition: none;
     overflow-y: auto;
+    position: relative;
+    transform: translate(0, 0);
+    transition: none;
+    width: 50%;
+  }
+
+  &.open {
+   transform: translate(0, 0);
   }
 }
 
-.navdrawer-container.open {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-}
-
-.app-bar,
+.app-bar-container,
 .navdrawer-container.opened,
 main {
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-          transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
 }
 
 .navdrawer-container h4,
-.navdrawer-container ul li a {
+.navdrawer-navitem a {
   height: 60px;
   padding: 17px 20px;
   line-height: 1.4;
+
+  @include media(desktop) {
+    padding: 17px 0;
+  }
 }
 
 .navdrawer-container h4 {
   background-color: white;
   color: $navdrawer-header-color;
+  margin: 4px 0;
 
   @include media(desktop) {
     display: none;
   }
 }
 
-.navdrawer-container ul {
-  padding: 0;
-  margin: 0;
+.navdrawer-list {
+  display: block;
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 
   @include media(desktop) {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     max-width: 864px;
     margin: 0 auto;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
   }
 }
 
-.navdrawer-container ul li a {
+.navdrawer-navitem a {
   display: block;
   text-decoration: none;
   color: $navdrawer-drawer-color;
-  -webkit-transition: background-color 0.2s ease-out;
-          transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
   white-space: nowrap;
 
   @include media(desktop) {
     color: $navdrawer-nav-color;
   }
+
+  &:hover {
+    background-color: rgba(#fff, 0.2);
+  }
+
+  &:focus {
+    background-color: rgba(#fff, 0.3);
+    outline: 0;
+  }
+
+  &:active {
+    background-color: rgba(#fff, 0.4);
+  }
 }
 
-.navdrawer-container ul li {
+.navdrawer-navitem {
+  display: block;
   border-bottom-style: solid;
   border-width: 1px;
   border-color: white;
   padding: 0;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 
   @include media(desktop) {
-    border: none;
+    display: inline-block;
+    border-width: 3px;
+    border-color: transparent;
+    margin: 0 20px;
+  }
+
+  &::before {
+    content: none;
   }
 }
 
-.navdrawer-container ul li::before {
-  content: none;
+.navdrawer-navitem_active,
+.navdrawer-navitem:hover {
+  @include media(desktop) {
+    border-color: $brand-color-blue;
+  }
 }
 
-.navdrawer-container ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.navdrawer-container ul li a:focus {
-  background-color: rgba(255, 255, 255, 0.3);
-  outline: 0;
-}
-
-.navdrawer-container ul li a:active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
 
 @include media(desktop) {
   main {
     max-width: 864px;
     padding-top: 0;
     min-height: initial;
-  }
-
-  body {
-    overflow-y: scroll;
   }
 }

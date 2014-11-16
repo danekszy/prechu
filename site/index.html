@@ -19,9 +19,9 @@
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
+    <meta name="msapplication-TileColor" content="#fff">
 
-    <meta name="theme-color" content="#3372DF">
+    <meta name="theme-color" content="#4281f2">
 
     <!--
     <link rel="canonical" href="http://www.example.com/">
@@ -32,24 +32,23 @@
   <body>
     <header class="app-bar promote-layer">
       <div class="app-bar-container">
-        <button class="menu"><img src="images/hamburger.svg" alt="Menu"></button>
         <h1 class="logo"><img src="images/logo.svg" alt="Prechu" class="logo--image_svg"></h1>
+        <button class="menu"><img src="images/hamburger.svg" alt="Menu"></button>
         <section class="app-bar-actions">
         <!-- Put App Bar Buttons Here -->
         <!-- e.g <button><i class="icon icon-star"></i></button> -->
         </section>
       </div>
-    </header>
-
-    <nav class="navdrawer-container">
+      <nav class="navdrawer-container">
       <h4>Menu</h4>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#product">Product</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul class="navdrawer-list">
+        <li class="navdrawer-navitem"><a href="#home">Home</a></li>
+        <li class="navdrawer-navitem navdrawer-navitem_active"><a href="#product">Products</a></li>
+        <li class="navdrawer-navitem"><a href="#services">Services</a></li>
+        <li class="navdrawer-navitem"><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    </header>
 
     <main>
 

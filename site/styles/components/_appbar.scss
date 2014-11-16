@@ -1,4 +1,14 @@
 $app-bar-bg: #fff;
+$navbar-height: 60px;
+$navbar-height-desktop: 90px;
+
+body {
+  padding-top: $navbar-height;
+
+  @include media(desktop) {
+    padding-top: 0;
+  }
+}
 
 .app-bar {
   display: block;
@@ -6,9 +16,8 @@ $app-bar-bg: #fff;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: $app-bar-bg;
-  overflow: hidden;
-  z-index: 1;
+  z-index: 2;
+  @include container();
 
   @include media(desktop) {
     position: relative;
@@ -16,34 +25,24 @@ $app-bar-bg: #fff;
 }
 
 .app-bar-container {
+  background-color: $app-bar-bg;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 60px;
+  height: $navbar-height;
   position: relative;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   margin: 0 auto;
+  z-index: 2;
 
   @include media(desktop) {
     display: block;
-    height: 130px;
-    max-width: 864px;
-    padding: 0 16px;
-    background-color: $app-bar-bg;
-  }
-}
-
-.app-bar.open,
-.app-bar.open ~ main {
-  -webkit-transform: translate(250px, 0);
-          transform: translate(250px, 0);
-
-  @include media(desktop) {
-      -webkit-transform: translate(0px, 0);
-          transform: translate(0px, 0);
+    float: left;
+    width: 50%;
+    height: $navbar-height-desktop;
   }
 }
 
@@ -52,7 +51,7 @@ $app-bar-bg: #fff;
       -ms-flex: 1;
           flex: 1;
   font-size: 2em;
-  line-height: 60px;
+  line-height: $navbar-height;
   margin: 0 16px;
   padding: 0;
   color: #fefefe;
@@ -65,15 +64,15 @@ $app-bar-bg: #fff;
     float: left;
     margin: 0;
     padding: 0;
-    line-height: 130px;
+    line-height: $navbar-height-desktop;
     font-size: 46px;
   }
-}
 
-.app-bar .logo a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: normal;
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: normal;
+  }
 }
 
 .app-bar-actions {
@@ -101,25 +100,26 @@ $app-bar-bg: #fff;
   -webkit-transition: background-color 0.2s ease-out;
           transition: background-color 0.2s ease-out;
   -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: 0;
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  img {
+    height: 24px;
+    width: 24px;
+  }
 }
 
-.app-bar button img {
-  height: 24px;
-  width: 24px;
-}
-
-.app-bar button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.app-bar button:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-  outline: 0;
-}
-
-.app-bar button:active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
 
 @include media(desktop) {
   .app-bar::after {
