@@ -1,5 +1,5 @@
 $app-bar-bg: #fff;
-$navbar-height: 60px;
+$navbar-height: 45px;
 $navbar-height-desktop: 90px;
 
 body {
@@ -92,8 +92,8 @@ body {
 }
 
 .app-bar button {
-  width: 60px;
-  height: 60px;
+  width: $navbar-height;
+  height: $navbar-height;
   background-image: none;
   background-color: transparent;
   border: none;
