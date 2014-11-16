@@ -86,20 +86,6 @@ body {
   }
 }
 
-.app-bar-actions {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  z-index: 2;
-
-  @include media(desktop) {
-    float: right;
-  }
-}
-
 .app-bar button {
   width: 30px;
   height: 24px;
