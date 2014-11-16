@@ -1,0 +1,48 @@
+$banner-text-color: #fff;
+
+.banner {
+  position: relative;
+  overflow: auto;
+}
+
+.banner-slides {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.banner-slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: $banner-text-color;
+  display: none;
+  float: left;
+  height: 125px;
+  width: 100%;
+
+  &:first-child {
+    display: initial;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}
+
+.banner-header {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.banner-desc {
+  font-size: 12px;
+  color: $banner-text-color;
+}
+
+.demo-banner-slide1,
+.demo-banner-slide2,
+.demo-banner-slide3 {
+  background-color: #43474d;
+  background-image: url('/images/jpg/bannerbg.jpg');
+}

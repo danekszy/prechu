@@ -12,6 +12,9 @@ body {
   color: $body-text-color;
 }
 
+.container {
+  @include container();
+}
 
 
 
