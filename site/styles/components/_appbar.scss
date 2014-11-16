@@ -75,7 +75,14 @@ body {
   }
 
   img {
-    margin: 0;
+    height: $navbar-height * 0.7;
+    margin: 6px 0;
+    vertical-align: top;
+
+    @include media(desktop) {
+      height: $navbar-height-desktop * 0.5;
+      vertical-align: middle;
+    }
   }
 }
 
@@ -94,31 +101,25 @@ body {
 }
 
 .app-bar button {
-  width: $navbar-height;
-  height: $navbar-height;
+  width: 30px;
+  height: 24px;
   background-image: none;
-  background-color: transparent;
+  background-color: $brand-color-primary;
   border: none;
+  border-radius: 2px;
   padding: 0;
+  margin-right: 10px;
   display: inline-block;
   -webkit-transition: background-color 0.2s ease-out;
           transition: background-color 0.2s ease-out;
   -webkit-tap-highlight-color: transparent;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
-  &:focus {
-    background-color: rgba(255, 255, 255, 0.2);
-    outline: 0;
-  }
-
-  &:active {
-    background-color: rgba(255, 255, 255, 0.4);
+  @include media(desktop) {
+    display: none;
   }
 
   img {
+    vertical-align: top;
     height: 24px;
     width: 24px;
   }
@@ -132,9 +133,5 @@ body {
     height: 0;
     overflow: hidden;
     clear: both;
-  }
-
-  button.menu {
-    display: none;
   }
 }

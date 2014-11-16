@@ -24,7 +24,7 @@
   var navdrawerContainer = querySelector('.navdrawer-container');
   var body = document.body;
   var appbarElement = querySelector('.app-bar');
-  var menuBtn = querySelector('.menu');
+  var menuBtn = querySelector('.js-nav-toggle');
   var main = querySelector('main');
 
   function closeMenu() {
