@@ -14,6 +14,11 @@
   backface-visibility: hidden;
 }
 
+//Boilerplate for grid elements
+%grid {
+  float: left;
+}
+
 //Set up a container
 @mixin container() {
   width: 100%;

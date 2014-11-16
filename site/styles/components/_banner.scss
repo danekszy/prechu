@@ -21,8 +21,14 @@ $banner-text-color: #fff;
   height: 125px;
   width: 100%;
 
+  @include media(tablet) {
+    height: 484px;
+  }
+
   &:first-child {
-    display: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .container {
@@ -30,14 +36,41 @@ $banner-text-color: #fff;
   }
 }
 
+//This one's not responsive
+.banner-image {
+  float: left;
+  width: 40%;
+   -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.banner-text {
+  float: left;
+  width: 60%;
+   -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 .banner-header {
   font-size: 16px;
   font-weight: 300;
+  margin-bottom: .4em;
+
+  @include media(tablet) {
+    font-size: 42px;
+  }
 }
 
 .banner-desc {
   font-size: 12px;
   color: $banner-text-color;
+  line-height: 1.8;
+
+  @include media(tablet) {
+    font-size: 26px;
+  }
 }
 
 .demo-banner-slide1,

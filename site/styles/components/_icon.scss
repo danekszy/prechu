@@ -21,10 +21,24 @@
 
 .featured-icon {
   float: left;
+  background-size: 45%;
   border-radius: 100%;
   height: 69px;
   width: 69px;
   margin: 5px 12px 5px 0;
+
+  @include media(tablet) {
+    clear: both;
+    float: none;
+    height: 146px;
+    width: 146px;
+    margin: 5px;
+  }
+
+  @include media(desktop) {
+    height: 186px;
+    width: 186px;
+  }
 }
 
 .icon_screen {
