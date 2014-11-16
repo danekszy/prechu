@@ -46,6 +46,7 @@ $banner-text-color: #fff;
 }
 
 .banner-text {
+  @extend .clearfix;
   float: left;
   width: 60%;
    -webkit-flex: 1;
@@ -56,7 +57,7 @@ $banner-text-color: #fff;
 .banner-header {
   font-size: 16px;
   font-weight: 300;
-  margin-bottom: .4em;
+  margin-bottom: .1em;
 
   @include media(tablet) {
     font-size: 42px;
@@ -65,11 +66,13 @@ $banner-text-color: #fff;
 
 .banner-desc {
   font-size: 12px;
+  line-height: 1.6;
   color: $banner-text-color;
-  line-height: 1.8;
+  margin-bottom: .3em;
 
   @include media(tablet) {
     font-size: 26px;
+    line-height: 1.7;
   }
 }
 

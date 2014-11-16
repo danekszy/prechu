@@ -52,7 +52,6 @@ body {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  font-size: 2em;
   line-height: $navbar-height;
   margin: 0 16px;
   padding: 0;
@@ -67,13 +66,16 @@ body {
     margin: 0;
     padding: 0;
     line-height: $navbar-height-desktop;
-    font-size: 46px;
   }
 
   a {
     text-decoration: none;
     color: inherit;
     font-weight: normal;
+  }
+
+  img {
+    margin: 0;
   }
 }
 

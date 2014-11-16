@@ -1,0 +1,31 @@
+.button {
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.8em;
+  padding: 0 .5em;
+  text-decoration: none;
+  margin: .7em 0;
+  -webkit-font-smoothing: antialiased;
+
+  &:hover {
+    color: #fff;
+  }
+
+  @include media(tablet) {
+    border-radius: 2px;
+    font-size: 22px;
+    padding: .1em .5em;
+    margin: .7em .4em;
+  }
+}
+
+.button-primary {
+  background-color: $brand-color-primary;
+
+  &:hover,
+  &:focus {
+    background-color: darken($brand-color-primary, 8%);
+  }
+}

@@ -41,6 +41,16 @@
   }
 }
 
+.button-icon {
+  height: 1em;
+  width: 1em;
+  background-size: 100%;
+  line-height: inherit;
+  vertical-align: middle;
+  margin-right: .2em;
+  margin-bottom: .2em;
+}
+
 .icon_screen {
   background-image: url('/images/svg/icon-screen.svg');
 }
@@ -51,4 +61,8 @@
 
 .icon_basket {
   background-image: url('/images/svg/icon-basket.svg');
+}
+
+.icon_check {
+  background-image: url('/images/svg/icon-check.svg');
 }
