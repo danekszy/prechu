@@ -9,6 +9,10 @@ $app-bar-bg: #fff;
   background-color: $app-bar-bg;
   overflow: hidden;
   z-index: 1;
+
+  @include media(desktop) {
+    position: relative;
+  }
 }
 
 .app-bar-container {
@@ -22,12 +26,25 @@ $app-bar-bg: #fff;
       -ms-flex-direction: row;
           flex-direction: row;
   margin: 0 auto;
+
+  @include media(desktop) {
+    display: block;
+    height: 130px;
+    max-width: 864px;
+    padding: 0 16px;
+    background-color: $app-bar-bg;
+  }
 }
 
 .app-bar.open,
 .app-bar.open ~ main {
   -webkit-transform: translate(250px, 0);
           transform: translate(250px, 0);
+
+  @include media(desktop) {
+      -webkit-transform: translate(0px, 0);
+          transform: translate(0px, 0);
+  }
 }
 
 .app-bar .logo {
@@ -43,6 +60,14 @@ $app-bar-bg: #fff;
   max-width: none;
   font-weight: 300;
   display: initial;
+
+  @include media(desktop) {
+    float: left;
+    margin: 0;
+    padding: 0;
+    line-height: 130px;
+    font-size: 46px;
+  }
 }
 
 .app-bar .logo a {
@@ -59,6 +84,10 @@ $app-bar-bg: #fff;
       -ms-flex-direction: row;
           flex-direction: row;
   z-index: 2;
+
+  @include media(desktop) {
+    float: right;
+  }
 }
 
 .app-bar button {
@@ -90,4 +119,18 @@ $app-bar-bg: #fff;
 
 .app-bar button:active {
   background-color: rgba(255, 255, 255, 0.4);
+}
+
+@include media(desktop) {
+  .app-bar::after {
+    content: ' ';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+  }
+
+  button.menu {
+    display: none;
+  }
 }

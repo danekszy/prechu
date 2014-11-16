@@ -1,4 +1,5 @@
 @import 'vars';
+@import 'partials';
 
 //Vendor & boilerplate stuff
 @import 'vendor/normalize';
@@ -6,3 +7,6 @@
 
 //Own styles
 @import 'global';
+
+@import 'components/appbar';
+@import 'components/navdrawer';
