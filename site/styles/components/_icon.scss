@@ -1,0 +1,40 @@
+.icon {
+  background-size: 50%;
+  display: inline-block;
+  min-height: 16px;
+  min-width: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icon-red {
+  background-color: $brand-color-red;
+}
+
+.icon-blue {
+  background-color: $brand-color-blue;
+}
+
+.icon-yellow {
+  background-color: $brand-color-yellow;
+}
+
+.featured-icon {
+  float: left;
+  border-radius: 100%;
+  height: 69px;
+  width: 69px;
+  margin: 5px 12px 5px 0;
+}
+
+.icon_screen {
+  background-image: url('/images/svg/icon-screen.svg');
+}
+
+.icon_pencil {
+  background-image: url('/images/svg/icon-pencil.svg');
+}
+
+.icon_basket {
+  background-image: url('/images/svg/icon-basket.svg');
+}
