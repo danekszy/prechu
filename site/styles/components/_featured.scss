@@ -1,0 +1,29 @@
+.featured-sections {
+
+}
+
+.featured-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featured-element {
+  border-bottom: 1px solid rgba(#000, .2);
+  padding: 15px 20px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.featured-header {
+  font-size: 17px;
+  font-weight: 300;
+  color: $brand-color-primary;
+}
+
+.featured-desc {
+  font-size: 10px;
+  color: $body-text-color;
+}
