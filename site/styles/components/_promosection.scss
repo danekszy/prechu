@@ -1,0 +1,28 @@
+.promo-info {
+  border-bottom: 1px solid rgba(#000, .15);
+  padding-bottom: 25px;
+
+  .container {
+    padding: 0 40px;
+  }
+}
+
+.promo-header {
+  font-weight: 300;
+  color: $header-text-color;
+}
+
+.promo-header_primary {
+  text-align: center;
+  font-size: 21px;
+}
+
+.promo-header_secondary {
+  font-size: 17px;
+}
+
+.promo-desc {
+  font-size: 9px;
+  color: $body-text-color;
+  line-height: 2;
+}

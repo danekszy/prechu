@@ -5,16 +5,33 @@
 }
 
 body {
+  color: $body-text-color;
   font-family: $body-font-family;
   font-size: $body-font-size;
-  line-height: 1.6250em; /* 26px */
   font-weight: 300; // to thicken it a bit, we need to remove font-smoothing
-  color: $body-text-color;
+  line-height: 1.6250em; /* 26px */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  -moz-font-feature-settings: 'kern';
+  -moz-font-feature-settings: 'kern=1';
+  -webkit-font-feature-settings: 'kern';
+  font-feature-settings: 'kern';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .container {
   @include container();
 }
 
-
-
+.pagefooter {
+  font-size: 8px;
+  padding: 10px 0;
+  text-align: center;
+}
