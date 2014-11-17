@@ -104,7 +104,6 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src(['site/scripts/vendor/*.js', 'site/scripts/*.js'])
-    .pipe($.changed('scripts', {extension: '.js'}))
     .pipe(concat('main.min.js'))
     .pipe(gulp.dest('.tmp/scripts'))
     .pipe(stripDebug())
@@ -168,7 +167,7 @@ gulp.task('serve', ['styles', 'scripts'], function () {
 
   gulp.watch(['site/**/*.html'], reload);
   gulp.watch(['site/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['site/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['site/scripts/**/*.js'], ['jshint', 'scripts']);
   gulp.watch(['site/images/**/*'], reload);
 });
 
