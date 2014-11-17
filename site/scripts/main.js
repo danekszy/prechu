@@ -16,7 +16,7 @@
  *  limitations under the License
  *
  */
-(function () {
+(function ($) {
   'use strict';
 
   var querySelector = document.querySelector.bind(document);
@@ -50,12 +50,10 @@
 
   if(typeof $.fn.unslider === 'function') {
     var slider = $('.js-unslider');
-    //Init unslider
     slider.unslider({
       fluid: true
     });
 
-    //Init arrows if there's more than 1 slide
     if(slider.find('.banner-slide').length > 1) {
       slider.find('.unslider-arrow').addClass('unslider-arrow_enabled');
       slider.find('.unslider-arrow').click(function() {
@@ -64,4 +62,4 @@
       });
     }
   }
-})();
+})(window.jQuery);
