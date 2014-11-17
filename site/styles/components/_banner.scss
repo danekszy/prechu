@@ -1,19 +1,19 @@
 $banner-text-color: #fff;
 
 .banner {
-  position: relative;
   overflow: auto;
+  position: relative;
 
   //The cutoff effect (white triangles at the bottom)
   @include media(tablet) {
     &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 8px;
       background-image: url('/images/svg/saw.svg');
+      bottom: 0;
+      content: '';
+      height: 8px;
+      left: 0;
+      position: absolute;
+      right: 0;
     }
   }
 }
@@ -21,14 +21,14 @@ $banner-text-color: #fff;
 .banner-slides {
   @extend %promote-layer;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .banner-slide {
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: $banner-text-color;
   display: none;
   float: left;
@@ -97,19 +97,15 @@ $banner-text-color: #fff;
 
 //This one's not responsive
 .banner-image-container {
+  flex: 4;
   width: 40%;
-   -webkit-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
 }
 
 .banner-text {
   @extend .clearfix;
+  flex: 6;
   width: 60%;
   -webkit-font-smoothing: antialiased;
-   -webkit-flex: 6;
-      -ms-flex: 6;
-          flex: 6;
 }
 
 .banner-header {
@@ -123,9 +119,9 @@ $banner-text-color: #fff;
 }
 
 .banner-desc {
+  color: $banner-text-color;
   font-size: 12px;
   line-height: 1.6;
-  color: $banner-text-color;
   margin-bottom: 0;
 
   @include media(tablet) {
@@ -140,8 +136,8 @@ $banner-text-color: #fff;
   text-align: center;
 
   @include media(tablet) {
-    margin: 30px 30px 0 0;
     height: 100%;
+    margin: 30px 30px 0 0;
   }
 
   img {

@@ -5,8 +5,8 @@
 .featured-list {
   @extend .clearfix;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 
   @include media(tablet) {
     margin: 50px 0;
@@ -29,9 +29,9 @@
 }
 
 .featured-header {
+  color: $brand-color-primary;
   font-size: 17px;
   font-weight: 400;
-  color: $brand-color-primary;
   margin: .6em 0 0 0;
 
   @include media(tablet) {
@@ -41,8 +41,8 @@
 }
 
 .featured-desc {
-  font-size: 10px;
   color: $body-text-color;
+  font-size: 10px;
   line-height: 1.3;
 
     @include media(tablet) {
@@ -51,20 +51,20 @@
 }
 
 .featured-icon {
-  float: left;
   background-size: 45%;
   border-radius: 100%;
+  float: left;
   height: 69px;
-  width: 69px;
   margin: 5px 12px 5px 0;
   transition: all .15s ease;
+  width: 69px;
 
   @include media(tablet) {
     clear: both;
     float: none;
     height: 146px;
-    width: 146px;
     margin: 5px;
+    width: 146px;
   }
 
   @include media(desktop) {

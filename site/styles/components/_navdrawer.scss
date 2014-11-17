@@ -42,8 +42,8 @@ main {
 .navdrawer-container h4,
 .navdrawer-navitem a {
   height: 60px;
-  padding: 17px 20px;
   line-height: 1.4;
+  padding: 17px 20px;
 
   @include media(desktop) {
     padding: 17px 0;
@@ -73,9 +73,9 @@ main {
 }
 
 .navdrawer-navitem a {
+  color: $navdrawer-drawer-color;
   display: block;
   text-decoration: none;
-  color: $navdrawer-drawer-color;
   transition: background-color 0.2s ease-out;
   white-space: nowrap;
 
@@ -98,19 +98,17 @@ main {
 }
 
 .navdrawer-navitem {
-  display: block;
   border-bottom-style: solid;
-  border-width: 1px;
   border-color: white;
+  border-width: 1px;
+  display: block;
+  flex: 1;
   padding: 0;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 
   @include media(desktop) {
-    display: inline-block;
-    border-width: 3px;
     border-color: transparent;
+    border-width: 3px;
+    display: inline-block;
     margin: 0 20px;
   }
 

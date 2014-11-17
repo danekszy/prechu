@@ -25,14 +25,12 @@ body {
 }
 
 .app-bar-container {
-          flex-direction: row;
-      -ms-flex-direction: row;
-  -webkit-flex-direction: row;
   background-color: $app-bar-bg;
   border-bottom: 1px solid rgba(#000, .2);
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex-direction: row;
   height: $navbar-height;
   margin: 0 auto;
   position: relative;
@@ -49,29 +47,27 @@ body {
 }
 
 .app-bar .logo {
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  color: #fefefe;
+  display: initial;
+  flex: 1;
+  float: none;
+  font-weight: 300;
   line-height: $navbar-height;
   margin: 0 16px;
-  padding: 0;
-  color: #fefefe;
-  float: none;
   max-width: none;
-  font-weight: 300;
-  display: initial;
+  padding: 0;
 
   @include media(desktop) {
     float: left;
+    line-height: $navbar-height-desktop;
     margin: 0;
     padding: 0;
-    line-height: $navbar-height-desktop;
   }
 
   a {
-    text-decoration: none;
     color: inherit;
     font-weight: normal;
+    text-decoration: none;
   }
 
   img {
@@ -87,17 +83,16 @@ body {
 }
 
 .app-bar button {
-  width: 30px;
-  height: 24px;
-  background-image: none;
   background-color: $brand-color-primary;
-  border: none;
+  background-image: none;
   border-radius: 2px;
-  padding: 0;
-  margin-right: 10px;
+  border: none;
   display: inline-block;
-  -webkit-transition: background-color 0.2s ease-out;
-          transition: background-color 0.2s ease-out;
+  height: 24px;
+  margin-right: 10px;
+  padding: 0;
+  transition: background-color 0.2s ease-out;
+  width: 30px;
   -webkit-tap-highlight-color: transparent;
 
   @include media(desktop) {
@@ -105,8 +100,8 @@ body {
   }
 
   img {
-    vertical-align: top;
     height: 24px;
+    vertical-align: top;
     width: 24px;
   }
 }
@@ -114,10 +109,10 @@ body {
 
 @include media(desktop) {
   .app-bar::after {
+    clear: both;
     content: ' ';
     display: block;
     height: 0;
     overflow: hidden;
-    clear: both;
   }
 }
