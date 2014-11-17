@@ -26,6 +26,11 @@ h6 {
   text-rendering: optimizeLegibility;
 }
 
+picture {
+  @extend .clearflx;
+  display: block;
+}
+
 .container {
   @extend .clearfix;
   @include container();

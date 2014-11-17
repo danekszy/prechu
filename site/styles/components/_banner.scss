@@ -18,41 +18,41 @@ $banner-text-color: #fff;
   color: $banner-text-color;
   display: none;
   float: left;
-  height: 125px;
   width: 100%;
 
-  @include media(tablet) {
-    height: 484px;
-  }
-
   &:first-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
   }
 
   .container {
-    padding: 0 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 125px;
+    justify-content: center;
+    padding: 0;
+
+    @include media(tablet) {
+      height: 484px;
+    }
   }
 }
 
 //This one's not responsive
-.banner-image {
-  float: left;
+.banner-image-container {
   width: 40%;
-   -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+   -webkit-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
 }
 
 .banner-text {
   @extend .clearfix;
-  float: left;
   width: 60%;
   -webkit-font-smoothing: antialiased;
-   -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+   -webkit-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
 }
 
 .banner-header {
@@ -74,6 +74,21 @@ $banner-text-color: #fff;
   @include media(tablet) {
     font-size: 26px;
     line-height: 1.7;
+  }
+}
+
+.banner-iphone {
+  height: 110px;
+  text-align: center;
+
+  @include media(tablet) {
+    margin: 30px 30px 0 0;
+    height: 100%;
+  }
+
+  img {
+    max-height: 100%;
+    max-width: 90%;
   }
 }
 
