@@ -70,10 +70,10 @@
   @include media(desktop) {
     height: 186px;
     width: 186px;
-  }
 
-  a:focus &,
-  a:hover & {
-    transform: scale(1.1);
+    a:focus &,
+    a:hover & {
+      transform: scale(1.1);
+    }
   }
 }
