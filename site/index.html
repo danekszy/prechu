@@ -48,7 +48,9 @@
     </header>
 
     <main>
-      <section class="banner">
+      <section class="banner js-unslider">
+        <a href="#" class="unslider-arrow unslider-arrow_prev" data-slider-action="prev">Poprzedni slajd</a>
+        <a href="#" class="unslider-arrow unslider-arrow_next" data-slider-action="next">Następny slajd</a>
         <ul class="banner-slides">
             <li class="banner-slide demo-banner-slide1">
               <div class="container">
@@ -60,6 +62,21 @@
                 </div>
                 <div class="banner-text">
                   <h2 class="banner-header">Lorem Ipsum is simply</h2>
+                  <div class="banner-desc">dummy text of the<br> printing & typetetting</div>
+                  <a href="#" class="button button-primary banner-cta"><span class="icon button-icon icon_check"></span> Sign up now</a>
+                </div>
+              </div>
+            </li>
+            <li class="banner-slide demo-banner-slide1">
+              <div class="container">
+                <div class="banner-image-container">
+                  <picture class="banner-image banner-iphone">
+                    <source srcset="/images/png/iphone-desktop.png" media="(min-width: 620px)">
+                    <img srcset="/images/png/iphone-phone.png, /images/png/iphone-phone.2x.png 2x" alt="An iPhone showing off our cool app">
+                  </picture>
+                </div>
+                <div class="banner-text">
+                  <h2 class="banner-header">Lorem Ipsum is simply2</h2>
                   <div class="banner-desc">dummy text of the<br> printing & typetetting</div>
                   <a href="#" class="button button-primary banner-cta"><span class="icon button-icon icon_check"></span> Sign up now</a>
                 </div>
@@ -122,9 +139,9 @@
       Copyright © 2012-2013 cssauthor.com
     </footer>
 
-    <script src="scripts/main.js"></script>
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
     <script src="//unslider.com/unslider.min.js"></script>
+    <script src="scripts/main.js"></script>
     <script src="scripts/vendor/picturefill.js" async></script>
 
     <script>

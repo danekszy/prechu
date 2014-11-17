@@ -47,4 +47,19 @@
       closeMenu();
     }
   });
+
+  if(typeof $.fn.unslider === 'function') {
+    var slider = $('.js-unslider');
+    //Init unslider
+    slider.unslider();
+
+    //Init arrows if there's more than 1 slide
+    if(slider.find('.banner-slide').length > 1) {
+      slider.find('.unslider-arrow').addClass('unslider-arrow_enabled');
+      slider.find('.unslider-arrow').click(function() {
+          var fn = $(this).data('slider-action');
+          slider.data('unslider')[fn]();
+      });
+    }
+  }
 })();
