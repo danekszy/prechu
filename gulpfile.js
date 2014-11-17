@@ -42,7 +42,7 @@ var AUTOPREFIXER_BROWSERS = [
 
 // Lint JavaScript
 gulp.task('jshint', function () {
-  return gulp.src('site/scripts/**/*.js')
+  return gulp.src(['site/scripts/**/*.js', '!**/vendor/**'])
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -117,7 +117,7 @@ gulp.task('html', function () {
       // CSS Selectors for UnCSS to ignore
       ignore: [
         /.navdrawer-container.open/,
-        /.nav-bar.open/
+        /.app-bar.open/
       ]
     })))
     // Concatenate And Minify Styles
