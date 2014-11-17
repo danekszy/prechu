@@ -10,9 +10,10 @@ $navdrawer-header-color: $brand-color-blue;
   background-color: $navdrawer-drawer-bg;
   color: $navdrawer-drawer-color;
   font-size: 20px;
-  height: 100%;
+  height: auto;
   overflow-y: auto;
-  transform: translate(0, -110%);
+  position: absolute;
+  transform: translate(0, -120%);
   width: 100%;
   z-index: 1;
 

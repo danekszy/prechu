@@ -13,21 +13,14 @@ body {
 .app-bar {
   display: block;
   left: 0;
-  overflow: hidden;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
-  height: $navbar-height;
   @include container();
 
   @include media(desktop) {
-    height: $navbar-height-desktop;
     position: relative;
-  }
-
-  &.open {
-    height: auto;
   }
 }
 
@@ -40,6 +33,7 @@ body {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  height: $navbar-height;
   margin: 0 auto;
   position: relative;
   width: 100%;
@@ -49,6 +43,7 @@ body {
     border-bottom: none;
     display: block;
     float: left;
+    height: $navbar-height-desktop;
     width: 50%;
   }
 }
