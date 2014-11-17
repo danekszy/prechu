@@ -24,28 +24,28 @@
 var Prechu = {};
 
 Prechu.Nav = {
-  elements: {
+  nodes: {
     navdrawerContainer: $('.navdrawer-container'),
-    appbarElement: $('.app-bar'),
+    appbar: $('.app-bar'),
     menuBtn: $('.js-nav-toggle'),
     main: $('main')
   },
 
   closeMenu: function () {
-    this.elements.appbarElement.classList.remove('open');
-    this.elements.navdrawerContainer.classList.remove('open');
+    Prechu.Nav.nodes.appbar.removeClass('open');
+    Prechu.Nav.nodes.navdrawerContainer.removeClass('open');
   },
 
   toggleMenu: function () {
-    this.elements.appbarElement.classList.toggle('open');
-    this.elements.navdrawerContainer.classList.toggle('open');
-    this.elements.navdrawerContainer.classList.add('opened');
+    Prechu.Nav.nodes.appbar.toggleClass('open');
+    Prechu.Nav.nodes.navdrawerContainer.toggleClass('open');
+    Prechu.Nav.nodes.navdrawerContainer.addClass('opened');
   },
 
   initNav: function() {
-    this.elements.main.on('click', this.closeMenu);
-    this.elements.menuBtn.on('click', this.toggleMenu);
-    this.elements.navdrawerContainer.on('click', function (event) {
+    this.nodes.main.on('click', this.closeMenu);
+    this.nodes.menuBtn.on('click', this.toggleMenu);
+    this.nodes.navdrawerContainer.on('click', function (event) {
       if (event.target.nodeName === 'A' || event.target.nodeName === 'LI') {
         this.closeMenu();
       }
@@ -58,21 +58,24 @@ Prechu.Slider = {
 
   handleArrowClick: function() {
     var fn = $(this).data('slider-action');
-    this.node.datthis.node('unslider')[fn]();
+    Prechu.Slider.node.data('unslider')[fn]();
   },
 
   initSliderArrows: function() {
     if(this.node.find('.banner-slide').length > 1) {
-      this.node.find('.unslider-arrow').addClass('unslider-arrow_enabled');
-      this.node.find('.unslider-arrow').click(this.handleArrowClick);
+      this.node.find('.unslider-arrow')
+        .addClass('unslider-arrow_enabled')
+        .click(this.handleArrowClick);
     }
   },
 
   initSlider: function() {
     if(typeof $.fn.unslider === 'function') {
-      this.node.unslider({
-        fluid: true
-      });
+      this.node.addClass('unslider-enabled')
+        .unslider({
+          fluid: true
+        });
+      this.initSliderArrows();
     }
   }
 };
