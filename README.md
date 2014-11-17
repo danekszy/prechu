@@ -2,7 +2,7 @@ prechu
 ======
 A small weekend project aiming to bring sample design to life.
 
-### Consideractions
+### Considerations
 - It's not pixel perfect, as the design was not laid over grid, and spacing seemed random in various places
 - Some elements were made from scratch as the design didn't provide necessary vector assets
 - It doesn't feature proper font hierarchy - neither styleguide, nor specs were provided
