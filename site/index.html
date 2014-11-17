@@ -33,29 +33,29 @@
   <body>
     <header class="app-bar promote-layer">
       <div class="app-bar-container">
-        <h1 class="logo"><img src="images/svg/logo.svg" alt="Prechu" class="logo--image_svg"></h1>
+        <h1 class="logo" role="img"><a href="/" class="logo-anchor"><img src="images/svg/logo.svg" alt="Prechu" class="logo-image_svg"></a></h1>
         <button class="button button-primary nav-button js-nav-toggle"><img src="/images/svg/icon-hamburger.svg" alt="Menu" class="icon"></button>
       </div>
-      <nav class="navdrawer-container">
-      <h4>Menu</h4>
+      <nav class="navdrawer-container" role="navigation">
+      <h4 role="columnheader">Menu</h4>
       <ul class="navdrawer-list">
-        <li class="navdrawer-navitem"><a href="#home">Home</a></li>
-        <li class="navdrawer-navitem navdrawer-navitem_active"><a href="#product">Products</a></li>
-        <li class="navdrawer-navitem"><a href="#services">Services</a></li>
-        <li class="navdrawer-navitem"><a href="#contact">Contact</a></li>
+        <li class="navdrawer-navitem" role="menuitem"><a href="/">Home</a></li>
+        <li class="navdrawer-navitem navdrawer-navitem_active" role="menuitem"><a href="#product">Products</a></li>
+        <li class="navdrawer-navitem" role="menuitem"><a href="#services">Services</a></li>
+        <li class="navdrawer-navitem" role="menuitem"><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     </header>
 
-    <main>
+    <main role="main">
       <section class="banner js-unslider">
-        <a href="#" class="unslider-arrow unslider-arrow_prev" data-slider-action="prev">Poprzedni slajd</a>
-        <a href="#" class="unslider-arrow unslider-arrow_next" data-slider-action="next">Następny slajd</a>
+        <a href="#" class="unslider-arrow unslider-arrow_prev" data-slider-action="prev" role="button">Poprzedni slajd</a>
+        <a href="#" class="unslider-arrow unslider-arrow_next" data-slider-action="next" role="button">Następny slajd</a>
         <ul class="banner-slides">
             <li class="banner-slide demo-banner-slide1">
               <div class="container">
                 <div class="banner-image-container">
-                  <picture class="banner-image banner-iphone">
+                  <picture class="banner-image banner-iphone" role="img">
                     <source srcset="/images/png/iphone-desktop.png" media="(min-width: 620px)">
                     <img srcset="/images/png/iphone-phone.png, /images/png/iphone-phone.2x.png 2x" alt="An iPhone showing off our cool app">
                   </picture>
@@ -63,14 +63,14 @@
                 <div class="banner-text">
                   <h2 class="banner-header">Lorem Ipsum is simply</h2>
                   <div class="banner-desc">dummy text of the<br> printing & typetetting</div>
-                  <a href="#" class="button button-primary banner-cta"><span class="icon button-icon icon_check"></span> Sign up now</a>
+                  <a href="#" class="button button-primary banner-cta" role="button"><span class="icon button-icon icon_check" role="presentation"></span> Sign up now</a>
                 </div>
               </div>
             </li>
             <li class="banner-slide demo-banner-slide1">
               <div class="container">
                 <div class="banner-image-container">
-                  <picture class="banner-image banner-iphone">
+                  <picture class="banner-image banner-iphone" role="img">
                     <source srcset="/images/png/iphone-desktop.png" media="(min-width: 620px)">
                     <img srcset="/images/png/iphone-phone.png, /images/png/iphone-phone.2x.png 2x" alt="An iPhone showing off our cool app">
                   </picture>
@@ -78,7 +78,7 @@
                 <div class="banner-text">
                   <h2 class="banner-header">Lorem Ipsum is simply2</h2>
                   <div class="banner-desc">dummy text of the<br> printing & typetetting</div>
-                  <a href="#" class="button button-primary banner-cta"><span class="icon button-icon icon_check"></span> Sign up now</a>
+                  <a href="#" class="button button-primary banner-cta" role="button"><span class="icon button-icon icon_check" role="presentation"></span> Sign up now</a>
                 </div>
               </div>
             </li>
@@ -90,21 +90,21 @@
           <ul class="featured-list">
             <li class="featured-element g-third">
               <a href="#">
-                <div class="icon icon_pencil icon-blue featured-icon"></div>
+                <div class="icon icon_pencil icon-blue featured-icon" role="presentation"></div>
                 <h3 class="featured-header">Contrary to popular</h3>
                 <div class="featured-desc">Lorem Ipsum is not simply random text.<br> It has root in a piece...</div>
               </a>
             </li>
             <li class="featured-element g-third">
             <a href="#">
-                <div class="icon icon_screen icon-red featured-icon"></div>
+                <div class="icon icon_screen icon-red featured-icon" role="presentation"></div>
                 <h3 class="featured-header">Contrary to popular</h3>
                 <div class="featured-desc">Lorem Ipsum is not simply random text.<br> It has root in a piece...</div>
               </a>
             </li>
             <li class="featured-element g-third">
               <a href="#">
-                <div class="icon icon_basket icon-yellow featured-icon"></div>
+                <div class="icon icon_basket icon-yellow featured-icon" role="presentation"></div>
                 <h3 class="featured-header">Contrary to popular</h3>
                 <div class="featured-desc">Lorem Ipsum is not simply random text.<br> It has root in a piece...</div>
               </a>
@@ -115,12 +115,12 @@
 
       <section class="promo-info">
         <div class="container">
-          <h2 class="promo-header promo-header_primary">The Shopping cart</h2>
+          <h2 class="promo-header promo-header_primary" role="heading">The Shopping cart</h2>
           <div class="g-half">
-            <picture class="promo-image promo-cart">
-                    <source srcset="/images/jpg/cart-desktop.jpg" media="(min-width: 620px)">
-                    <img srcset="/images/jpg/cart-phone.jpg, /images/jpg/cart-phone.2x.jpg 2x" alt="Icon of shopping basket.">
-                  </picture>
+            <picture class="promo-image promo-cart" role="img">
+              <source srcset="/images/jpg/cart-desktop.jpg" media="(min-width: 620px)">
+              <img srcset="/images/jpg/cart-phone.jpg, /images/jpg/cart-phone.2x.jpg 2x" alt="Icon of shopping basket.">
+            </picture>
           </div>
           <div class="g-half">
             <h3 class="promo-header promo-header_secondary">Some Bullet text here</h3>
@@ -135,7 +135,7 @@
         </div>
       </section>
     </main>
-    <footer class="pagefooter">
+    <footer class="pagefooter" role="contentinfo">
       Copyright © 2012-2013 cssauthor.com
     </footer>
 
