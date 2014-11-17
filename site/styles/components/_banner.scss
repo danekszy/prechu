@@ -62,7 +62,7 @@ $banner-text-color: #fff;
     transition: all .2s ease;
     width: 25px;
     will-change: opacity, transform;
-    z-index: 2;
+    z-index: 1;
 
     &:hover {
       opacity: 1;
