@@ -100,7 +100,10 @@
         <div class="container">
           <h2 class="promo-header promo-header_primary">The Shopping cart</h2>
           <div class="g-half">
-
+            <picture class="promo-image promo-cart">
+                    <source srcset="/images/jpg/cart-desktop.jpg" media="(min-width: 620px)">
+                    <img srcset="/images/jpg/cart-phone.jpg, /images/jpg/cart-phone.2x.jpg 2x" alt="Icon of shopping basket.">
+                  </picture>
           </div>
           <div class="g-half">
             <h3 class="promo-header promo-header_secondary">Some Bullet text here</h3>
@@ -122,6 +125,7 @@
     <script src="scripts/main.js"></script>
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
     <script src="//unslider.com/unslider.min.js"></script>
+    <script src="scripts/vendor/picturefill.js" async></script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
