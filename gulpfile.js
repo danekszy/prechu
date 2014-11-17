@@ -27,6 +27,8 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var pagespeed = require('psi');
 var reload = browserSync.reload;
+var concat = require('gulp-concat');
+var stripDebug = require('gulp-strip-debug');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -99,6 +101,20 @@ gulp.task('styles', function () {
     .pipe($.size({title: 'styles'}));
 });
 
+gulp.task('scripts', function () {
+  // For best performance, don't add Sass partials to `gulp.src`
+  return gulp.src(['site/scripts/vendor/*.js', 'site/scripts/*.js'])
+    .pipe($.changed('scripts', {extension: '.js'}))
+    .pipe(concat('main.min.js'))
+    .pipe(gulp.dest('.tmp/scripts'))
+    .pipe(stripDebug())
+    // Concatenate And Minify JavaScript
+    .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
+    .pipe(gulp.dest('dist/scripts'))
+    .pipe($.size({title: 'scripts'}));
+});
+
+
 // Scan Your HTML For Assets & Optimize Them
 gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: '{.tmp,site}'});
@@ -138,7 +154,7 @@ gulp.task('html', function () {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['styles'], function () {
+gulp.task('serve', ['styles', 'scripts'], function () {
   browserSync({
     notify: false,
     // Customize the BrowserSync console logging prefix
@@ -171,7 +187,7 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', ['jshint', 'scripts', 'html', 'images', 'fonts', 'copy'], cb);
 });
 
 // Run PageSpeed Insights
