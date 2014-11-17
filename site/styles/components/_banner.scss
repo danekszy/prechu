@@ -30,9 +30,14 @@ $banner-text-color: #fff;
   background-repeat: no-repeat;
   background-position: bottom;
   color: $banner-text-color;
-  display: block;
+  display: none;
   float: left;
   width: 100%;
+
+  &:first-child,
+  .unslider-enabled & {
+    display: block;
+  }
 
   .container {
     align-items: center;
@@ -54,6 +59,7 @@ $banner-text-color: #fff;
 
   @include media(tablet) {
     background-size: 100%;
+    display: block;
     height: 63px;
     margin-top: -32px;
     opacity: .6;
