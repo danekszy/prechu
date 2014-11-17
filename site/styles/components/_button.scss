@@ -9,7 +9,9 @@
   margin: .7em 0;
   -webkit-font-smoothing: antialiased;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:visited {
     color: #fff;
   }
 
@@ -28,4 +30,14 @@
   &:focus {
     background-color: darken($brand-color-primary, 8%);
   }
+}
+
+.button-icon {
+  height: 1em;
+  width: 1em;
+  background-size: 100%;
+  line-height: inherit;
+  vertical-align: middle;
+  margin-right: .2em;
+  margin-bottom: .2em;
 }

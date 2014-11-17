@@ -69,11 +69,12 @@ $banner-text-color: #fff;
   font-size: 12px;
   line-height: 1.6;
   color: $banner-text-color;
-  margin-bottom: .3em;
+  margin-bottom: 0;
 
   @include media(tablet) {
     font-size: 26px;
     line-height: 1.7;
+    margin-bottom: .2em;
   }
 }
 
