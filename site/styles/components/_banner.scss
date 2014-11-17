@@ -3,6 +3,19 @@ $banner-text-color: #fff;
 .banner {
   position: relative;
   overflow: auto;
+
+  //The cutoff effect (white triangles at the bottom)
+  @include media(tablet) {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background-image: url('/images/svg/saw.svg');
+    }
+  }
 }
 
 .banner-slides {
