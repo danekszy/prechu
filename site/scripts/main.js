@@ -51,7 +51,9 @@
   if(typeof $.fn.unslider === 'function') {
     var slider = $('.js-unslider');
     //Init unslider
-    slider.unslider();
+    slider.unslider({
+      fluid: true
+    });
 
     //Init arrows if there's more than 1 slide
     if(slider.find('.banner-slide').length > 1) {
